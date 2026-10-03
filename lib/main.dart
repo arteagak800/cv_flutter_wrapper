@@ -286,13 +286,6 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
         ],
       ),
-      floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: const Color(0xFF2E333C),
-        foregroundColor: Colors.white,
-        icon: const Icon(Icons.send_rounded),
-        label: const Text('Contactar'),
-        onPressed: _shareProfile,
-      ),
     );
   }
 }

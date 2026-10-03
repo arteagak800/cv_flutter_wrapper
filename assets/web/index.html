@@ -7,29 +7,31 @@
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- CONTENEDOR PRINCIPAL -->
   <div class="cv-wrapper">
 
-    <!-- HERO / ENCABEZADO MODERNO -->
-    <header class="hero-card">
+    <!-- HERO / CABECERA PERSONAL -->
+    <header id="perfil" class="hero-card">
       <div class="hero-avatar-wrapper">
         <div class="hero-avatar">
-          <i class="fas fa-user-graduate"></i>
+          <i class="fas fa-user"></i>
         </div>
-        <span class="status-badge" title="Disponible para proyectos">
+        <span class="status-badge">
           <span class="status-dot"></span> Disponible
         </span>
       </div>
-      
+
       <div class="hero-info">
         <h1 class="hero-name">Kevin Daniel Arteaga Gallegos</h1>
-        <p class="hero-tagline">Estudiante de Computación • Desarrollador de Software</p>
-        <p class="hero-location"><i class="fas fa-map-marker-alt"></i> Tulcán, Carchi, Ecuador • 21 años</p>
+        <p class="hero-tagline">Estudiante de Computación • UPEC</p>
+        <p class="hero-subtitle">Desarrollo de Software • Programación • Ciberseguridad</p>
       </div>
 
       <!-- Botón de cambio de tema accesible y sincronizado con Flutter -->
@@ -38,247 +40,270 @@
       </button>
     </header>
 
-    <!-- ACCESOS RÁPIDOS DE CONTACTO (TARJETAS INTERACTIVAS 1-CLICK) -->
+    <!-- DATOS PERSONALES (SIMÉTRICOS Y HUMANOS) -->
+    <section class="personal-data-grid">
+      <div class="data-item">
+        <span class="data-label"><i class="fas fa-birthday-cake"></i> Nacimiento</span>
+        <span class="data-val">26 de diciembre de 2004 (21 años)</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label"><i class="fas fa-map-marker-alt"></i> Origen</span>
+        <span class="data-val">Riobamba, Chimborazo, Ecuador</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label"><i class="fas fa-home"></i> Residencia actual</span>
+        <span class="data-val">Tulcán, Carchi, Ecuador</span>
+      </div>
+      <div class="data-item">
+        <span class="data-label"><i class="fas fa-university"></i> Universidad</span>
+        <span class="data-val">UPEC (7mo Semestre)</span>
+      </div>
+    </section>
+
+    <!-- TARJETAS DE CONTACTO DIRECTO (1-CLICK PARA COPIAR) -->
     <section class="quick-contact-grid">
-      <div class="contact-card" onclick="copiarAlPortapapeles('kevin.arteaga@upec.edu.ec', 'Correo institucional')">
-        <div class="contact-icon email-icon">
+      <div class="contact-card" onclick="copiarAlPortapapeles('arteagak800@gmail.com', 'Correo personal')">
+        <div class="contact-icon email-personal">
           <i class="fas fa-envelope"></i>
         </div>
         <div class="contact-details">
-          <span class="contact-label">Correo UPEC</span>
+          <span class="contact-label">Correo Personal</span>
+          <span class="contact-val">arteagak800@gmail.com</span>
+        </div>
+        <i class="fas fa-copy copy-hint"></i>
+      </div>
+
+      <div class="contact-card" onclick="copiarAlPortapapeles('kevin.arteaga@upec.edu.ec', 'Correo institucional')">
+        <div class="contact-icon email-upec">
+          <i class="fas fa-graduation-cap"></i>
+        </div>
+        <div class="contact-details">
+          <span class="contact-label">Correo Institucional</span>
           <span class="contact-val">kevin.arteaga@upec.edu.ec</span>
         </div>
         <i class="fas fa-copy copy-hint"></i>
       </div>
 
-      <div class="contact-card" onclick="copiarAlPortapapeles('+593 99 123 4567', 'Teléfono')">
+      <div class="contact-card" onclick="copiarAlPortapapeles('0987649121', 'Teléfono')">
         <div class="contact-icon phone-icon">
           <i class="fas fa-phone-alt"></i>
         </div>
         <div class="contact-details">
-          <span class="contact-label">Contacto Móvil</span>
-          <span class="contact-val">+593 99 123 4567</span>
+          <span class="contact-label">Teléfono Móvil</span>
+          <span class="contact-val">0987649121</span>
         </div>
         <i class="fas fa-copy copy-hint"></i>
       </div>
 
-      <a href="https://github.com/kevin-arteaga" target="_blank" class="contact-card link-card">
+      <a href="https://github.com/arteagak800" target="_blank" class="contact-card link-card">
         <div class="contact-icon github-icon">
           <i class="fab fa-github"></i>
         </div>
         <div class="contact-details">
           <span class="contact-label">GitHub</span>
-          <span class="contact-val">github.com/kevin-arteaga</span>
-        </div>
-        <i class="fas fa-external-link-alt copy-hint"></i>
-      </a>
-
-      <a href="https://linkedin.com/in/kevin-arteaga" target="_blank" class="contact-card link-card">
-        <div class="contact-icon linkedin-icon">
-          <i class="fab fa-linkedin-in"></i>
-        </div>
-        <div class="contact-details">
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-val">linkedin.com/in/kevin-arteaga</span>
+          <span class="contact-val">github.com/arteagak800</span>
         </div>
         <i class="fas fa-external-link-alt copy-hint"></i>
       </a>
     </section>
 
-    <!-- CUERPO PRINCIPAL CON TARJETAS VISIBLES -->
+    <!-- CUERPO PRINCIPAL DE SECCIONES -->
     <main class="main-sections">
 
-      <!-- TARJETA: PERFIL PROFESIONAL -->
-      <section class="modern-card">
+      <!-- TARJETA: PERFIL PROFESIONAL (HUMANIZADO Y NATURAL) -->
+      <section class="content-card">
         <div class="card-header">
-          <div class="card-icon"><i class="fas fa-id-badge"></i></div>
+          <div class="card-icon"><i class="fas fa-user-check"></i></div>
           <h2 class="card-title">Perfil Profesional</h2>
         </div>
         <div class="card-body">
-          <p class="profile-desc">
-            Estudiante de 21 años de la carrera de Computación en la <strong>Universidad Politécnica Estatal del Carchi (UPEC)</strong>. Formación sólida en desarrollo de aplicaciones móviles híbridas (Flutter & Dart), arquitecturas contenerizadas (Docker), bases de datos y soporte integral de hardware y redes. Graduado como Bachiller en Ciencias en la <strong>Unidad Educativa San José La Salle</strong> de Tulcán. Proactivo, analítico y enfocado en construir soluciones tecnológicas escalables y eficientes.
+          <p class="profile-text">
+            Soy estudiante de 21 años de la carrera de Computación en la Universidad Politécnica Estatal del Carchi, originario de Riobamba y viviendo en Tulcán por mis estudios. Me apasiona el desarrollo de software, la programación y el campo de la ciberseguridad, así como el soporte de hardware y la administración de redes.
+          </p>
+          <p class="profile-text" style="margin-top: 10px;">
+            He trabajado en proyectos prácticos con Flutter, bases de datos y entornos contenerizados, además de brindar soporte técnico a computadoras. Me gusta ser ordenado, resolver problemas de forma práctica y aprender cosas nuevas por mi cuenta.
           </p>
         </div>
       </section>
 
       <!-- TARJETA: FORMACIÓN ACADÉMICA -->
-      <section class="modern-card">
+      <section id="estudios" class="content-card">
         <div class="card-header">
           <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
           <h2 class="card-title">Formación Académica</h2>
         </div>
-        <div class="card-body academic-timeline">
+        <div class="card-body academic-list">
           
-          <div class="timeline-card active-degree">
-            <div class="timeline-header">
-              <span class="timeline-badge in-progress">En curso (2022 - Presente)</span>
-              <span class="timeline-location"><i class="fas fa-map-pin"></i> Tulcán</span>
+          <div class="academic-box active-degree">
+            <div class="box-top">
+              <span class="badge in-progress">En curso (2022 - Presente)</span>
+              <span class="box-city"><i class="fas fa-map-pin"></i> Tulcán</span>
             </div>
-            <h3 class="timeline-title">Ingeniería en Computación</h3>
-            <p class="timeline-institution">Universidad Politécnica Estatal del Carchi (UPEC)</p>
-            <p class="timeline-detail">Séptimo Semestre • Enfoque en Desarrollo Móvil, Sistemas Distribuidos y Redes.</p>
+            <h3 class="box-title">Ingeniería en Computación</h3>
+            <p class="box-institution">Universidad Politécnica Estatal del Carchi (UPEC)</p>
+            <p class="box-note">Actualmente en 7mo semestre, cursando desarrollo de aplicaciones móviles y sistemas distribuidos.</p>
           </div>
 
-          <div class="timeline-card">
-            <div class="timeline-header">
-              <span class="timeline-badge graduated">Graduado</span>
-              <span class="timeline-location"><i class="fas fa-map-pin"></i> Tulcán</span>
+          <div class="academic-box">
+            <div class="box-top">
+              <span class="badge completed">Graduado</span>
+              <span class="box-city"><i class="fas fa-map-pin"></i> Tulcán</span>
             </div>
-            <h3 class="timeline-title">Bachiller en Ciencias</h3>
-            <p class="timeline-institution">Unidad Educativa San José La Salle</p>
-            <p class="timeline-detail">Formación científica y tecnológica preuniversitaria.</p>
+            <h3 class="box-title">Bachiller en Ciencias</h3>
+            <p class="box-institution">Unidad Educativa San José La Salle</p>
+            <p class="box-note">Educación secundaria con bases en razonamiento lógico y ciencias exactas.</p>
           </div>
 
         </div>
       </section>
 
-      <!-- TARJETA: EXPERIENCIA Y PROYECTOS -->
-      <section class="modern-card">
+      <!-- TARJETA: PROYECTOS Y EXPERIENCIA -->
+      <section id="proyectos" class="content-card">
         <div class="card-header">
           <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-          <h2 class="card-title">Experiencia y Proyectos</h2>
+          <h2 class="card-title">Proyectos y Experiencia</h2>
         </div>
         <div class="card-body projects-list">
 
-          <article class="project-box">
-            <div class="project-top">
-              <h3 class="project-role">Desarrollo Móvil Híbrido & Wrapper Flutter</h3>
-              <span class="project-date">2023 - 2024</span>
+          <article class="project-card">
+            <div class="project-header">
+              <h3 class="project-title">Desarrollo Móvil en Flutter & Wrapper WebView</h3>
+              <span class="project-year">2023 - 2024</span>
             </div>
-            <p class="project-company">UPEC • Cátedra de Desarrollo Móvil</p>
-            <ul class="project-points">
-              <li><i class="fas fa-check-circle"></i> Construcción de wrappers móviles en Flutter para renderizar interfaces web responsivas offline.</li>
-              <li><i class="fas fa-check-circle"></i> Implementación de canales de comunicación bidireccionales nativos mediante <code>JavaScriptChannel</code>.</li>
-              <li><i class="fas fa-check-circle"></i> Empaquetado y generación de ejecutables APK optimizados para arquitecturas ARM64.</li>
+            <p class="project-org">UPEC • Desarrollo Móvil</p>
+            <ul class="project-items">
+              <li>Creación de contenedores híbridos en Flutter integrando contenido web de forma offline.</li>
+              <li>Comunicación entre JavaScript y Dart mediante canales nativos bidireccionales.</li>
+              <li>Generación y optimización de ejecutables APK para arquitecturas móviles.</li>
             </ul>
-            <div class="project-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">Dart</span>
-              <span class="tag">WebView</span>
-              <span class="tag">Android</span>
+            <div class="project-pills">
+              <span class="pill">Flutter</span>
+              <span class="pill">Dart</span>
+              <span class="pill">WebView</span>
+              <span class="pill">Mobile</span>
             </div>
           </article>
 
-          <article class="project-box">
-            <div class="project-top">
-              <h3 class="project-role">Soporte Técnico, Ensamblaje y Redes</h3>
-              <span class="project-date">2022 - 2024</span>
+          <article class="project-card">
+            <div class="project-header">
+              <h3 class="project-title">Soporte Técnico de PCs, Redes y Mantenimiento</h3>
+              <span class="project-year">2022 - 2024</span>
             </div>
-            <p class="project-company">Servicios Formativos y Particulares • Tulcán, Carchi</p>
-            <ul class="project-points">
-              <li><i class="fas fa-check-circle"></i> Mantenimiento preventivo/correctivo de computadoras de escritorio y portátiles.</li>
-              <li><i class="fas fa-check-circle"></i> Instalación y optimización de sistemas operativos Windows y distribuciones Linux.</li>
-              <li><i class="fas fa-check-circle"></i> Cableado estructurado, ponchado de cables UTP RJ-45 y configuración de routers Wi-Fi.</li>
+            <p class="project-org">Servicios Particulares • Tulcán & Riobamba</p>
+            <ul class="project-items">
+              <li>Diagnóstico, ensamblaje, cambio de piezas y optimización térmica de computadoras.</li>
+              <li>Instalación y configuración de sistemas operativos Windows y Linux.</li>
+              <li>Instalación de cableado de red RJ45 y configuración de routers locales.</li>
             </ul>
-            <div class="project-tags">
-              <span class="tag">Hardware</span>
-              <span class="tag">Redes LAN</span>
-              <span class="tag">Linux</span>
-              <span class="tag">Windows</span>
+            <div class="project-pills">
+              <span class="pill">Hardware</span>
+              <span class="pill">Redes LAN</span>
+              <span class="pill">Linux</span>
+              <span class="pill">Windows</span>
             </div>
           </article>
 
         </div>
       </section>
 
-      <!-- TARJETA: HABILIDADES TÉCNICAS (CON FILTRO INTERACTIVO) -->
-      <section class="modern-card">
+      <!-- TARJETA: HABILIDADES TÉCNICAS (CON BOTONES SIMÉTRICOS) -->
+      <section id="habilidades" class="content-card">
         <div class="card-header">
-          <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="card-icon"><i class="fas fa-code"></i></div>
           <h2 class="card-title">Habilidades Técnicas</h2>
         </div>
         <div class="card-body">
           
-          <!-- Filtro con píldoras segmentadas limpias -->
-          <div class="filter-pills">
-            <button class="pill-btn active" data-filter="all">Todas</button>
-            <button class="pill-btn" data-filter="software">Software</button>
-            <button class="pill-btn" data-filter="hardware">Hardware & Redes</button>
-            <button class="pill-btn" data-filter="soft">Competencias</button>
+          <!-- Filtro de Categorías -->
+          <div class="filter-bar">
+            <button class="filter-tab active" data-filter="all">Todas</button>
+            <button class="filter-tab" data-filter="software">Desarrollo</button>
+            <button class="filter-tab" data-filter="security">Ciberseguridad & Redes</button>
+            <button class="filter-tab" data-filter="hardware">Hardware</button>
           </div>
 
-          <!-- Cuadrícula de chips de tecnologías -->
-          <div class="skills-grid" id="skillsGrid">
-            <div class="skill-chip" data-category="software">
-              <i class="fab fa-flutter"></i> Flutter & Dart
+          <!-- CUADRÍCULA SIMÉTRICA: TODOS LOS BOTONES TIENEN EL MISMO TAMAÑO -->
+          <div class="symmetric-skills-grid" id="skillsGrid">
+            
+            <div class="skill-button" data-category="software">
+              <i class="fab fa-flutter"></i>
+              <span>Flutter & Dart</span>
             </div>
-            <div class="skill-chip" data-category="software">
-              <i class="fab fa-html5"></i> HTML5 / CSS3 / JS
+
+            <div class="skill-button" data-category="software">
+              <i class="fab fa-html5"></i>
+              <span>HTML5 & CSS3</span>
             </div>
-            <div class="skill-chip" data-category="software">
-              <i class="fab fa-docker"></i> Docker Contenedores
+
+            <div class="skill-button" data-category="software">
+              <i class="fab fa-js"></i>
+              <span>JavaScript ES6</span>
             </div>
-            <div class="skill-chip" data-category="software">
-              <i class="fab fa-python"></i> Python & C++
+
+            <div class="skill-button" data-category="software">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
             </div>
-            <div class="skill-chip" data-category="software">
-              <i class="fas fa-database"></i> MySQL & PostgreSQL
+
+            <div class="skill-button" data-category="software">
+              <i class="fas fa-database"></i>
+              <span>SQL & Bases Datos</span>
             </div>
-            <div class="skill-chip" data-category="hardware">
-              <i class="fas fa-tools"></i> Mantenimiento de PCs
+
+            <div class="skill-button" data-category="software">
+              <i class="fab fa-docker"></i>
+              <span>Docker & Git</span>
             </div>
-            <div class="skill-chip" data-category="hardware">
-              <i class="fas fa-network-wired"></i> Redes LAN & Wi-Fi
+
+            <div class="skill-button" data-category="security">
+              <i class="fas fa-shield-alt"></i>
+              <span>Ciberseguridad</span>
             </div>
-            <div class="skill-chip" data-category="hardware">
-              <i class="fab fa-linux"></i> Linux & Windows OS
+
+            <div class="skill-button" data-category="security">
+              <i class="fas fa-network-wired"></i>
+              <span>Redes LAN & Wi-Fi</span>
             </div>
-            <div class="skill-chip" data-category="soft">
-              <i class="fas fa-users"></i> Trabajo en Equipo
+
+            <div class="skill-button" data-category="hardware">
+              <i class="fas fa-tools"></i>
+              <span>Soporte de PCs</span>
             </div>
-            <div class="skill-chip" data-category="soft">
-              <i class="fas fa-lightbulb"></i> Resolución de Problemas
+
+            <div class="skill-button" data-category="hardware">
+              <i class="fab fa-linux"></i>
+              <span>Linux & Windows</span>
             </div>
+
+            <div class="skill-button" data-category="security">
+              <i class="fas fa-user-shield"></i>
+              <span>Auditoría Básica</span>
+            </div>
+
+            <div class="skill-button" data-category="software">
+              <i class="fas fa-laptop-code"></i>
+              <span>Lógica y Algoritmos</span>
+            </div>
+
           </div>
 
         </div>
       </section>
 
-      <!-- TARJETA: IDIOMAS -->
-      <section class="modern-card">
+      <!-- TARJETA: CONTACTO / ENVIAR MENSAJE -->
+      <section id="contacto" class="content-card">
         <div class="card-header">
-          <div class="card-icon"><i class="fas fa-language"></i></div>
-          <h2 class="card-title">Idiomas</h2>
-        </div>
-        <div class="card-body languages-grid">
-          
-          <div class="lang-box">
-            <div class="lang-top">
-              <span class="lang-name">Español</span>
-              <span class="lang-badge">Nativo</span>
-            </div>
-            <div class="meter-bar">
-              <div class="meter-fill" style="width: 100%;"></div>
-            </div>
-          </div>
-
-          <div class="lang-box">
-            <div class="lang-top">
-              <span class="lang-name">Inglés</span>
-              <span class="lang-badge">Básico (A2)</span>
-            </div>
-            <div class="meter-bar">
-              <div class="meter-fill" style="width: 45%;"></div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- TARJETA: MENSAJE RÁPIDO (MINIMALISTA) -->
-      <section class="modern-card">
-        <div class="card-header">
-          <div class="card-icon"><i class="fas fa-paper-plane"></i></div>
-          <h2 class="card-title">Enviar Mensaje Rápido</h2>
+          <div class="card-icon"><i class="fas fa-comment-dots"></i></div>
+          <h2 class="card-title">Enviar Mensaje</h2>
         </div>
         <div class="card-body">
-          <form id="contactForm" class="clean-form" onsubmit="handleFormSubmit(event)">
-            <div class="form-row">
+          <form id="contactForm" class="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-inputs">
               <input type="text" id="senderName" placeholder="Tu nombre" required>
               <input type="email" id="senderEmail" placeholder="Tu correo electrónico" required>
             </div>
-            <textarea id="senderMsg" rows="3" placeholder="Escribe tu mensaje..." required></textarea>
-            <button type="submit" class="send-action-btn">
+            <textarea id="senderMsg" rows="3" placeholder="Escribe aquí tu mensaje..." required></textarea>
+            <button type="submit" class="submit-action-btn">
               <i class="fas fa-paper-plane"></i> Enviar Mensaje
             </button>
           </form>
@@ -287,16 +312,40 @@
 
     </main>
 
-    <!-- FOOTER MODERNO -->
+    <!-- FOOTER -->
     <footer class="cv-footer">
       <p>© 2026 Kevin Daniel Arteaga Gallegos • UPEC</p>
-      <p class="sub-footer">Desarrollado con HTML5, CSS3 y JavaScript • Wrapper en Flutter</p>
+      <p class="footer-sub">Tulcán, Carchi • Riobamba, Chimborazo</p>
     </footer>
 
   </div>
 
+  <!-- BARRA INTERACTIVA INFERIOR (BOTTOM NAVIGATION FLOTANTE AUTOMÁTICA) -->
+  <nav class="bottom-dock-nav" id="bottomNav">
+    <a href="#perfil" class="dock-item active" data-section="perfil">
+      <i class="fas fa-user"></i>
+      <span>Perfil</span>
+    </a>
+    <a href="#estudios" class="dock-item" data-section="estudios">
+      <i class="fas fa-graduation-cap"></i>
+      <span>Estudios</span>
+    </a>
+    <a href="#proyectos" class="dock-item" data-section="proyectos">
+      <i class="fas fa-briefcase"></i>
+      <span>Proyectos</span>
+    </a>
+    <a href="#habilidades" class="dock-item" data-section="habilidades">
+      <i class="fas fa-code"></i>
+      <span>Skills</span>
+    </a>
+    <a href="#contacto" class="dock-item" data-section="contacto">
+      <i class="fas fa-envelope"></i>
+      <span>Contacto</span>
+    </a>
+  </nav>
+
   <!-- NOTIFICACIÓN TOAST FLOTANTE -->
-  <div id="toast" class="toast">Información copiada al portapapeles</div>
+  <div id="toast" class="toast">Información copiada</div>
 
   <script src="app.js"></script>
 </body>
