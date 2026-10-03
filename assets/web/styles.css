@@ -1,0 +1,458 @@
+/* ==========================================================================
+   HOJA DE ESTILOS CSS3: Mobile-First, Responsive & Modern UI
+   ========================================================================== */
+
+:root {
+  --primary-color: #2E333C;
+  --header-bg: #B4C7E7;
+  --header-text: #1E232A;
+  --sidebar-bg: #2E333C;
+  --sidebar-text: #FFFFFF;
+  --body-bg: #E5E7EB;
+  --card-bg: #FFFFFF;
+  --text-main: #333333;
+  --text-muted: #6B7280;
+  --accent-color: #3B82F6;
+  --border-color: #1E232A;
+  --chip-bg: #F3F4F6;
+  --chip-border: #D1D5DB;
+}
+
+[data-theme="dark"] {
+  --body-bg: #111827;
+  --card-bg: #1F2937;
+  --header-bg: #1E3A8A;
+  --header-text: #E0E7FF;
+  --sidebar-bg: #111827;
+  --sidebar-text: #F3F4F6;
+  --text-main: #E5E7EB;
+  --text-muted: #9CA3AF;
+  --border-color: #374151;
+  --chip-bg: #374151;
+  --chip-border: #4B5563;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--text-main);
+  padding: 12px;
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Contenedor tipo Hoja A4 / Tarjeta */
+.cv-page {
+  max-width: 850px;
+  margin: 0 auto;
+  background-color: var(--card-bg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Banner Superior */
+.cv-header {
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  padding: 22px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-name {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  margin-bottom: 4px;
+}
+
+.header-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.9;
+}
+
+.theme-btn {
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--header-text);
+  font-size: 1rem;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.theme-btn:active {
+  transform: scale(0.92);
+}
+
+/* Estructura del Cuerpo (Mobile-First: Una columna por defecto) */
+.cv-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra Lateral */
+.sidebar {
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 24px 20px;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.avatar-circle {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  background-color: #4B5563;
+  border: 4px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar-section {
+  margin-bottom: 22px;
+}
+
+.sidebar-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  color: #FFFFFF;
+}
+
+.divider-sidebar {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.25);
+  margin: 6px 0 12px 0;
+}
+
+.contact-list, .links-list {
+  list-style: none;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 0.78rem;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.contact-item:hover {
+  opacity: 0.85;
+}
+
+.contact-item i, .links-list i {
+  width: 20px;
+  margin-right: 8px;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.links-list li {
+  font-size: 0.78rem;
+  margin-bottom: 8px;
+}
+
+.links-list a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+.academic-item {
+  margin-bottom: 12px;
+}
+
+.academic-degree {
+  font-size: 0.82rem;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+.academic-school {
+  font-size: 0.75rem;
+  color: #CBD5E1;
+}
+
+.academic-period {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Idiomas */
+.language-item {
+  margin-bottom: 12px;
+}
+
+.lang-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: #B4C7E7;
+  border-radius: 3px;
+}
+
+/* Columna Principal */
+.main-content {
+  padding: 24px 20px;
+  flex: 1;
+}
+
+.content-section {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 1.3px;
+  color: var(--header-text);
+}
+
+.divider-main {
+  width: 100%;
+  height: 1.5px;
+  background-color: var(--border-color);
+  margin: 6px 0 14px 0;
+}
+
+.profile-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+/* Tarjetas de Experiencia */
+.experience-card {
+  margin-bottom: 18px;
+}
+
+.exp-period {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.exp-role {
+  font-size: 0.88rem;
+  font-weight: bold;
+  margin: 2px 0;
+  color: var(--text-main);
+}
+
+.exp-company {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.exp-bullets {
+  padding-left: 18px;
+  font-size: 0.8rem;
+  color: var(--text-main);
+}
+
+.exp-bullets li {
+  margin-bottom: 4px;
+}
+
+/* Filtro Interactivo de Habilidades */
+.filter-container {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: var(--chip-bg);
+  color: var(--text-main);
+  border: 1px solid var(--chip-border);
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background-color: #2E333C;
+  color: #FFFFFF;
+  border-color: #2E333C;
+}
+
+[data-theme="dark"] .filter-btn.active {
+  background-color: #3B82F6;
+  border-color: #3B82F6;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-chip {
+  background-color: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.skill-chip i {
+  color: #3B82F6;
+}
+
+.skill-chip.hide {
+  display: none;
+}
+
+/* Formulario de Contacto */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--chip-border);
+  border-radius: 6px;
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  border-color: #3B82F6;
+}
+
+.submit-btn {
+  background-color: #2E333C;
+  color: #FFFFFF;
+  border: none;
+  padding: 9px 14px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: opacity 0.2s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+[data-theme="dark"] .submit-btn {
+  background-color: #3B82F6;
+}
+
+/* Footer */
+.cv-footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--chip-border);
+}
+
+/* Toast */
+.toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #1E232A;
+  color: #FFFFFF;
+  text-align: center;
+  border-radius: 8px;
+  padding: 10px 16px;
+  position: fixed;
+  z-index: 1000;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (ADAPTACIÓN A PANTALLAS GRANDES / TABLETS / ESCRITORIO)
+   ========================================================================== */
+@media (min-width: 768px) {
+  .cv-body {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 290px;
+  }
+
+  .main-content {
+    padding: 26px 28px;
+  }
+
+  .header-name {
+    font-size: 1.55rem;
+  }
+}

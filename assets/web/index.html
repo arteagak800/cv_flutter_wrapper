@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Hoja de Vida - Kevin Daniel Arteaga Gallegos</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- CONTENEDOR PRINCIPAL TIPO HOJA DE VIDA / CV -->
+  <div class="cv-page">
+    
+    <!-- BANNER SUPERIOR (AZUL PASTEL) -->
+    <header class="cv-header">
+      <div class="header-content">
+        <h1 class="header-name">KEVIN DANIEL ARTEAGA GALLEGOS</h1>
+        <p class="header-title">ESTUDIANTE DE COMPUTACIÓN | TECNOLOGÍAS DE LA INFORMACIÓN</p>
+      </div>
+      <button id="themeToggleBtn" class="theme-btn" title="Cambiar tema">
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+
+    <!-- CUERPO DE DOS COLUMNAS (ADAPTABLE A DISPOSITIVOS MÓVILES) -->
+    <div class="cv-body">
+      
+      <!-- COLUMNA IZQUIERDA: INFORMACIÓN PERSONAL, CONTACTO, ESTUDIOS, IDIOMAS -->
+      <aside class="sidebar">
+        <!-- FOTO DE PERFIL / AVATAR -->
+        <div class="avatar-container">
+          <div class="avatar-circle">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+        </div>
+
+        <!-- SECCIÓN DE CONTACTO -->
+        <section class="sidebar-section">
+          <ul class="contact-list">
+            <li class="contact-item" onclick="copiarAlPortapapeles('kevin.arteaga@upec.edu.ec', 'Correo')">
+              <i class="fas fa-envelope"></i>
+              <span>kevin.arteaga@upec.edu.ec</span>
+            </li>
+            <li class="contact-item" onclick="copiarAlPortapapeles('+593 99 123 4567', 'Teléfono')">
+              <i class="fas fa-phone"></i>
+              <span>+593 99 123 4567</span>
+            </li>
+            <li class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Tulcán, Carchi, Ecuador (21 años)</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- SITIOS WEB Y ENLACES -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">SITIOS WEB Y ENLACES</h2>
+          <div class="divider-sidebar"></div>
+          <ul class="links-list">
+            <li><i class="fab fa-github"></i> <a href="https://github.com/kevin-arteaga" target="_blank">github.com/kevin-arteaga</a></li>
+            <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/kevin-arteaga" target="_blank">linkedin.com/in/kevin-arteaga</a></li>
+          </ul>
+        </section>
+
+        <!-- FORMACIÓN ACADÉMICA -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">FORMACIÓN ACADÉMICA</h2>
+          <div class="divider-sidebar"></div>
+          
+          <article class="academic-item">
+            <h3 class="academic-degree">Ingeniería en Computación</h3>
+            <p class="academic-school">Universidad Politécnica Estatal del Carchi (UPEC)</p>
+            <span class="academic-period">Tulcán | En curso (2022 - Actualidad)</span>
+          </article>
+
+          <article class="academic-item">
+            <h3 class="academic-degree">Bachiller en Ciencias</h3>
+            <p class="academic-school">Unidad Educativa San José La Salle</p>
+            <span class="academic-period">Tulcán | Graduado</span>
+          </article>
+        </section>
+
+        <!-- IDIOMAS -->
+        <section class="sidebar-section">
+          <h2 class="sidebar-title">IDIOMAS</h2>
+          <div class="divider-sidebar"></div>
+          
+          <div class="language-item">
+            <div class="lang-header">
+              <span class="lang-name">Español</span>
+              <span class="lang-level">Nativo</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="language-item">
+            <div class="lang-header">
+              <span class="lang-name">Inglés</span>
+              <span class="lang-level">Básico (A2)</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" style="width: 40%;"></div>
+            </div>
+          </div>
+        </section>
+      </aside>
+
+      <!-- COLUMNA DERECHA: PERFIL, EXPERIENCIA, HABILIDADES Y PROYECTOS -->
+      <main class="main-content">
+        
+        <!-- 1. PERFIL PROFESIONAL -->
+        <section class="content-section">
+          <h2 class="section-title">PERFIL PROFESIONAL</h2>
+          <div class="divider-main"></div>
+          <p class="profile-text">
+            Estudiante universitario de 21 años de la carrera de Computación en la 
+            <strong>Universidad Politécnica Estatal del Carchi (UPEC)</strong>, con sólidos conocimientos 
+            en desarrollo de software, entornos contenerizados, mantenimiento preventivo/correctivo de hardware y redes de área local. 
+            Bachiller en Ciencias por la <strong>Unidad Educativa La Salle Tulcán</strong>. 
+            Proactivo, apasionado por la innovación tecnológica, el trabajo colaborativo y la resolución práctica de problemas mediante herramientas digitales.
+          </p>
+        </section>
+
+        <!-- 2. EXPERIENCIA Y PROYECTOS EN COMPUTACIÓN -->
+        <section class="content-section">
+          <h2 class="section-title">EXPERIENCIA Y PROYECTOS EN COMPUTACIÓN</h2>
+          <div class="divider-main"></div>
+
+          <article class="experience-card">
+            <span class="exp-period">2023 - Actualidad</span>
+            <h3 class="exp-role">Desarrollo Móvil y Contenedores Híbridos (Flutter & Docker)</h3>
+            <p class="exp-company">Universidad Politécnica Estatal del Carchi (UPEC)</p>
+            <ul class="exp-bullets">
+              <li>Construcción de aplicaciones móviles híbridas integrando componentes Web (WebView) dentro de Flutter.</li>
+              <li>Configuración de entornos de compilación y empaquetado de APKs Android utilizando contenedores Docker.</li>
+              <li>Desarrollo de módulos e interfaces de usuario reactivas con Dart y tecnologías web estándares (HTML5, CSS3, JS).</li>
+              <li>Modelado y gestión de bases de datos relacionales en MySQL y PostgreSQL.</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <span class="exp-period">2022 - 2024</span>
+            <h3 class="exp-role">Soporte Técnico, Ensamblaje y Mantenimiento de Computadoras</h3>
+            <p class="exp-company">Servicios Formativos & Particulares | Tulcán, Carchi</p>
+            <ul class="exp-bullets">
+              <li>Diagnóstico, formateo, repotenciación y mantenimiento de computadoras de escritorio y portátiles.</li>
+              <li>Instalación y optimización de sistemas operativos Windows 10/11 y distribuciones Linux (Ubuntu/Debian).</li>
+              <li>Instalación de cableado estructurado, verificación de ponchado RJ45 y configuración de routers Wi-Fi.</li>
+              <li>Mantenimiento preventivo de hardware, aplicación de pasta térmica y limpieza interna.</li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- 3. HABILIDADES Y APTITUDES (CON FILTRADO INTERACTIVO JS) -->
+        <section class="content-section">
+          <h2 class="section-title">HABILIDADES Y APTITUDES TÉCNICAS</h2>
+          <div class="divider-main"></div>
+
+          <!-- FILTRO INTERACTIVO CON JAVASCRIPT -->
+          <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="software">Desarrollo</button>
+            <button class="filter-btn" data-filter="hardware">Hardware & Redes</button>
+            <button class="filter-btn" data-filter="soft">Competencias</button>
+          </div>
+
+          <div class="skills-grid" id="skillsGrid">
+            <div class="skill-chip" data-category="software">
+              <i class="fab fa-flutter"></i> Flutter & Dart
+            </div>
+            <div class="skill-chip" data-category="software">
+              <i class="fab fa-html5"></i> HTML5 / CSS3 / JavaScript
+            </div>
+            <div class="skill-chip" data-category="software">
+              <i class="fab fa-docker"></i> Docker & Contenedores
+            </div>
+            <div class="skill-chip" data-category="software">
+              <i class="fab fa-python"></i> Python & C++
+            </div>
+            <div class="skill-chip" data-category="software">
+              <i class="fas fa-database"></i> MySQL & PostgreSQL
+            </div>
+            <div class="skill-chip" data-category="hardware">
+              <i class="fas fa-tools"></i> Mantenimiento de PCs & Laptops
+            </div>
+            <div class="skill-chip" data-category="hardware">
+              <i class="fas fa-network-wired"></i> Redes LAN & Wi-Fi
+            </div>
+            <div class="skill-chip" data-category="hardware">
+              <i class="fab fa-linux"></i> Linux & Windows OS
+            </div>
+            <div class="skill-chip" data-category="soft">
+              <i class="fas fa-users"></i> Trabajo en Equipo
+            </div>
+            <div class="skill-chip" data-category="soft">
+              <i class="fas fa-lightbulb"></i> Resolución de Problemas
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. MENSAJE RÁPIDO / INTERACCIÓN NATIVA-WEB -->
+        <section class="content-section">
+          <h2 class="section-title">CONTACTAR / ENVIAR MENSAJE</h2>
+          <div class="divider-main"></div>
+          <form id="contactForm" class="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <input type="text" id="senderName" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="senderEmail" placeholder="Tu correo electrónico" required>
+            </div>
+            <div class="form-group">
+              <textarea id="senderMsg" rows="3" placeholder="Mensaje..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i> Enviar Mensaje
+            </button>
+          </form>
+        </section>
+
+      </main>
+    </div>
+
+    <!-- PIE DE PÁGINA SEMÁNTICO -->
+    <footer class="cv-footer">
+      <p>© 2026 Kevin Daniel Arteaga Gallegos • UPEC - Carrera de Computación</p>
+    </footer>
+  </div>
+
+  <!-- TOAST / NOTIFICACIÓN FLOTANTE -->
+  <div id="toast" class="toast">Mensaje copiado</div>
+
+  <script src="app.js"></script>
+</body>
+</html>
