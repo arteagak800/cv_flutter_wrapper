@@ -1,100 +1,105 @@
-# Evolución de Hoja de Vida: De Nativo Android a Despliegue Web Embed en Flutter
+# Evolucion de Hoja de Vida: De Nativo Android a Despliegue Web Embed en Flutter
 
-**Estudiante:** Kevin Daniel Arteaga Gallegos (21 años)  
-**Institución:** Universidad Politécnica Estatal del Carchi (UPEC)  
-**Carrera:** Computación — *Desarrollo de Aplicaciones Móviles*  
-**Docente:** PhD. Samuel Lascano Rivera  
-**Semestre / Período:** 2026  
-
----
-
-## 📌 Descripción del Proyecto
-
-Este repositorio contiene la solución completa de la práctica académica **"Evolución de Hoja de Vida: De Nativo Android a Despliegue Web Embed en Flutter"**. El proyecto demuestra cómo transformar una hoja de vida originalmente desarrollada de manera nativa en Android hacia una arquitectura híbrida moderna desacoplada en dos fases:
-
-1. **Fase 1 (Web CV):** Rediseño a formato web responsivo utilizando **HTML5 semántico**, **CSS3 (Mobile-First)** y **JavaScript Vanilla**.
-2. **Fase 2 (Mobile App Wrapper):** Contenedor nativo en **Flutter** utilizando el paquete oficial `webview_flutter` para renderizar el contenido web de forma local y **100% offline** (Opción A - Assets), integrando controles y componentes nativos de la plataforma móvil.
+Estudiante: Kevin Daniel Arteaga Gallegos (21 anos)  
+Institucion: Universidad Politecnica Estatal del Carchi (UPEC)  
+Carrera: Computacion - Desarrollo de Aplicaciones Moviles  
+Docente: PhD. Samuel Lascano Rivera  
+Periodo: Octubre 2026 - Tulcan, Ecuador  
 
 ---
 
-## 📁 Estructura del Repositorio (`C:\CV`)
+## 1. Descripcion del Proyecto
+
+Este repositorio contiene la solucion de la practica academica "Evolucion de Hoja de Vida: De Nativo Android a Despliegue Web Embed en Flutter". El proyecto demuestra la transicion de una aplicacion desarrollada originalmente en formato nativo hacia una arquitectura desacoplada estructurada en dos fases:
+
+1. Fase 1 (Web CV): Rediseno a formato web utilizando HTML5 semantico, CSS3 (Mobile-First) y JavaScript Vanilla.
+2. Fase 2 (Mobile App Wrapper): Contenedor nativo en Flutter utilizando el paquete webview_flutter para renderizar el contenido web de forma local y 100% offline (Opcion A - Assets), integrando controles nativos de la plataforma Android.
+
+---
+
+## 2. Estructura del Repositorio (C:\cv_flutter_wrapper)
 
 ```text
-C:\CV\
-├── android/                   # Configuración y manifiesto nativo Android (SDK 34)
+C:\cv_flutter_wrapper\
+├── android/                   # Configuracion nativa Android (SDK 34)
 ├── assets/
 │   └── web/                   # FASE 1: Archivos web locales (Offline Assets)
-│       ├── index.html         # Estructura semántica HTML5
-│       ├── styles.css         # Estilos responsivos Mobile-First CSS3
-│       └── app.js             # Interactividad JS (filtros, modo oscuro, toast)
+│       ├── index.html         # Estructura semantica HTML5
+│       ├── styles.css         # Estilos responsivos CSS3
+│       └── app.js             # Interactividad JavaScript
 ├── lib/
 │   └── main.dart              # FASE 2: Contenedor Flutter con WebViewController y AppBar nativa
-├── captura_pixel7_cv.png      # Captura de pantalla en dispositivo físico (Google Pixel 7)
-├── CV_Kevin_Arteaga.apk       # APK compilado listo para instalación directa
-├── INFORME_PRACTICA.md        # Informe académico completo de la práctica
-├── pubspec.yaml               # Configuración de dependencias (webview_flutter)
-└── README.md                  # Documentación del proyecto
+├── captura_pixel7_cv.png      # Captura de pantalla en Google Pixel 7
+├── CV_Kevin_Arteaga.apk       # APK compilado listo para instalacion
+├── INFORME_PRACTICA.md        # Informe academico de la practica
+├── INFORME_PRACTICA_UPEC_KEVIN_ARTEAGA.docx # Documento formal en formato Word
+├── pubspec.yaml               # Configuracion de dependencias (webview_flutter)
+└── README.md                  # Documentacion del proyecto
 ```
 
 ---
 
-## 🚀 Tecnologías y Herramientas Empleadas
+## 3. Tecnologias y Herramientas Empleadas
 
 ### Fase 1: Entorno Web
-* **HTML5:** Estructuración semántica con `<header>`, `<main>`, `<section>`, `<article>` y `<footer>`.
-* **CSS3:** Maquetación responsiva con Flexbox y CSS Grid, variables CSS `:root` para temas claro/oscuro.
-* **JavaScript (ES6+):** Filtrado dinámico de habilidades técnicas por categorías, alternador de modo oscuro y notificaciones Toast flotantes.
+* HTML5: Estructuracion semantica con etiquetas header, main, section, article y footer.
+* CSS3: Maquetacion responsiva con Flexbox y CSS Grid, variables CSS para temas claro y oscuro, y diseno simetrico.
+* JavaScript: Filtrado de habilidades por categorias, barra dock inferior con ScrollSpy, alternador de modo oscuro y notificaciones toast.
 
-### Fase 2: Aplicación Móvil (Flutter Wrapper)
-* **Flutter SDK & Dart:** Framework multiplataforma de Google.
-* **`webview_flutter: ^4.10.0`:** Motor embebido oficial de Chromium/WebKit.
-* **Carga Offline:** Mediante `WebViewController()..loadFlutterAsset('assets/web/index.html')`.
-* **Integración Nativa:**
-  * `AppBar` con botones de navegación: Atrás en historial (`canGoBack`), Recargar (`reload`), alternancia de tema y menú inferior para compartir (`showModalBottomSheet`).
-  * Barra de progreso de carga (`LinearProgressIndicator`).
-  * Canal de mensajería bidireccional (`addJavaScriptChannel`).
+### Fase 2: Aplicacion Movil (Flutter Wrapper)
+* Flutter SDK y Dart: Framework de desarrollo multiplataforma.
+* webview_flutter (version 4.10.0): Motor embebido oficial para renderizado web.
+* Carga Offline: Ejecucion local mediante loadFlutterAsset('assets/web/index.html').
+* Integracion Nativa:
+  * AppBar con controles de historial (canGoBack/goBack), recarga de pagina (reload), sincronizacion de tema claro/oscuro y menu nativo para compartir.
+  * LinearProgressIndicator para mostrar el progreso de carga.
+  * Canal de comunicacion JavaScriptChannel para recibir eventos web y desplegar SnackBars nativos.
 
 ---
 
-## 📲 Ejecución del Proyecto
+## 4. Ejecucion del Proyecto
 
-### 1. Clonar o Abrir el Proyecto
+### 1. Clonar o abrir el proyecto
 ```bash
-cd C:\CV
+cd C:\cv_flutter_wrapper
 ```
 
-### 2. Obtener dependencias
+### 2. Descargar dependencias
 ```bash
 flutter pub get
 ```
 
-### 3. Ejecutar en dispositivo Android o emulador
+### 3. Ejecutar en dispositivo fisico o emulador
 ```bash
 flutter run
 ```
 
-### 4. Compilar APK de Distribución
+### 4. Compilacion de APK
 ```bash
 flutter build apk --release
 ```
-El archivo ejecutable generado se ubica en `build/app/outputs/flutter-apk/app-release.apk` o en la raíz como `CV_Kevin_Arteaga.apk`.
+El archivo final se ubica en la raiz del proyecto como CV_Kevin_Arteaga.apk.
 
 ---
 
-## 📊 Cuadro Comparativo: Nativo vs. Híbrido Embebido
+## 5. Cuadro Comparativo: Nativo vs. Hibrido Embebido
 
-| Criterio | Enfoque Nativo Puro (Android / Kotlin) | Enfoque Híbrido Embebido (Flutter + WebView) |
+| Criterio | Enfoque Nativo Puro (Android / Kotlin) | Enfoque Hibrido Embebido (Flutter + WebView) |
 | :--- | :--- | :--- |
-| **Rendimiento** | Máximo aprovechamiento de GPU nativa. | Óptimo para contenido estático/interactivo estándar. |
-| **Tiempos de Desarrollo** | Mayor tiempo; requiere codificar vistas específicas por SO. | **Ultra rápido;** reutilización directa del código web existente. |
-| **Mantenimiento** | Cualquier cambio de interfaz requiere recompilar el APK. | Los contenidos o estilos web pueden actualizarse de forma modular. |
-| **Acceso a Hardware** | Acceso directo a todas las APIs del sistema operativo. | Requiere puentes de comunicación (`JavaScriptChannel`). |
-| **Conectividad Requerida** | Depende de la lógica implementada. | **Zero dependencias de red** al utilizar assets locales (`assets/web/`). |
+| Rendimiento | Maximo (acceso directo a GPU nativa a 60-120 FPS). | Adecuado para interfaces estructuradas de lectura y consulta. |
+| Tiempos de Desarrollo | Mayor tiempo; requiere codificar pantallas por plataforma. | Rapido; reutiliza codigo web preexistente (HTML/CSS/JS). |
+| Mantenimiento | Requiere compilar y distribuir un nuevo APK ante cambios visuales. | Desacoplado; los archivos web pueden actualizarse de forma modular. |
+| Acceso a Hardware | Acceso directo a todas las APIs del sistema operativo. | Requiere canales de comunicacion asincronos (JavaScriptChannel). |
+| Conectividad | Depende de la logica implementada. | 100% offline mediante assets locales sin consumo de datos. |
 
 ---
 
-## 👤 Autor
-**Kevin Daniel Arteaga Gallegos**  
-Estudiante de Ingeniería en Computación  
-Universidad Politécnica Estatal del Carchi (UPEC)  
-Tulcán - Ecuador  
+## 6. Autor
+
+Kevin Daniel Arteaga Gallegos  
+Estudiante de Ingenieria en Computacion  
+Universidad Politecnica Estatal del Carchi (UPEC)  
+Tulcan - Ecuador  
+Correo personal: arteagak800@gmail.com  
+Correo institucional: kevin.arteaga@upec.edu.ec  
+Telefono: 0987649121  

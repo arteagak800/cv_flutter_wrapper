@@ -1,6 +1,6 @@
 /* ==========================================================================
-   INTERACTIVIDAD JAVASCRIPT: ScrollSpy Dock, Filtro Simétrico y Copiado
-   Kevin Daniel Arteaga Gallegos
+   INTERACTIVIDAD JAVASCRIPT: ScrollSpy Dock, Filtro Simetrico y Copiado
+   Kevin Daniel Arteaga Gallegos - UPEC
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -13,23 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
 function initThemeToggle() {
   const themeBtn = document.getElementById('themeToggleBtn');
   if (!themeBtn) return;
-  const icon = themeBtn.querySelector('i');
 
   themeBtn.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     if (currentTheme === 'dark') {
       document.documentElement.removeAttribute('data-theme');
-      if (icon) icon.className = 'fas fa-moon';
-      showToast('Modo Claro Activado');
+      showToast('Modo Claro');
     } else {
       document.documentElement.setAttribute('data-theme', 'dark');
-      if (icon) icon.className = 'fas fa-sun';
-      showToast('Modo Oscuro Activado');
+      showToast('Modo Oscuro');
     }
   });
 }
 
-// 2. BARRA INTERACTIVA INFERIOR (SCROLLSPY AUTOMÁTICO)
+// 2. BARRA INTERACTIVA INFERIOR (SCROLLSPY AUTOMATICO)
 function initScrollSpy() {
   const dockItems = document.querySelectorAll('.dock-item');
   const sections = [
@@ -40,7 +37,6 @@ function initScrollSpy() {
     document.getElementById('contacto')
   ].filter(Boolean);
 
-  // Detección automática al hacer scroll con IntersectionObserver
   const observerOptions = {
     root: null,
     rootMargin: '-20% 0px -60% 0px',
@@ -64,16 +60,15 @@ function initScrollSpy() {
 
   sections.forEach(section => observer.observe(section));
 
-  // Manejo de clic en los botones del dock
   dockItems.forEach(item => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener('click', () => {
       dockItems.forEach(i => i.classList.remove('active'));
       item.classList.add('active');
     });
   });
 }
 
-// 3. FILTRADO INTERACTIVO DE HABILIDADES (SIMÉTRICO)
+// 3. FILTRADO INTERACTIVO DE HABILIDADES (SIMETRICO)
 function initSkillsFilter() {
   const filterTabs = document.querySelectorAll('.filter-tab');
   const skillButtons = document.querySelectorAll('.skill-button');
@@ -97,11 +92,11 @@ function initSkillsFilter() {
   });
 }
 
-// 4. COPIAR AL PORTAPAPELES CON TOAST Y COMUNICACIÓN FLUTTER
+// 4. COPIAR AL PORTAPAPELES CON TOAST Y COMUNICACION FLUTTER
 function copiarAlPortapapeles(texto, label) {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(texto).then(() => {
-      showToast(`${label} copiado: ${texto}`);
+      showToast(`${label} copiado`);
     }).catch(() => {
       fallbackCopy(texto, label);
     });
@@ -109,7 +104,6 @@ function copiarAlPortapapeles(texto, label) {
     fallbackCopy(texto, label);
   }
 
-  // Notificar al wrapper nativo de Flutter si está disponible
   if (window.FlutterChannel) {
     window.FlutterChannel.postMessage(`Copiado: ${label} (${texto})`);
   }
@@ -122,7 +116,7 @@ function fallbackCopy(texto, label) {
   input.select();
   document.execCommand('copy');
   document.body.removeChild(input);
-  showToast(`${label} copiado: ${texto}`);
+  showToast(`${label} copiado`);
 }
 
 // 5. TOAST FLOTANTE
@@ -136,7 +130,7 @@ function showToast(mensaje) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => {
     toast.classList.remove('show');
-  }, 2200);
+  }, 2000);
 }
 
 // 6. FORMULARIO DE CONTACTO
@@ -146,9 +140,8 @@ function handleFormSubmit(event) {
   const email = document.getElementById('senderEmail').value;
   const msg = document.getElementById('senderMsg').value;
 
-  showToast(`¡Gracias ${name}! Mensaje enviado.`);
+  showToast(`Mensaje preparado`);
   
-  // Notificar al SnackBar de Flutter si se ejecuta en móvil
   if (window.FlutterChannel) {
     window.FlutterChannel.postMessage(`Mensaje de ${name} (${email}): ${msg}`);
   }
