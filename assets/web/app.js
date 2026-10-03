@@ -1,5 +1,6 @@
 /* ==========================================================================
-   INTERACTIVIDAD JAVASCRIPT: Filtrado, Copiado al Portapapeles y Modo Oscuro
+   INTERACTIVIDAD JAVASCRIPT: Filtrado, Copiado y Modo Oscuro
+   Compatible con WebView Flutter (Bidireccional) y Navegadores Web
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,17 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
 // 1. ALTERNADOR DE MODO OSCURO / CLARO
 function initThemeToggle() {
   const themeBtn = document.getElementById('themeToggleBtn');
+  if (!themeBtn) return;
   const icon = themeBtn.querySelector('i');
 
   themeBtn.addEventListener('click', () => {
     const currentTheme = document.documentElement.getAttribute('data-theme');
     if (currentTheme === 'dark') {
       document.documentElement.removeAttribute('data-theme');
-      icon.className = 'fas fa-moon';
+      if (icon) icon.className = 'fas fa-moon';
       showToast('Modo Claro Activado');
     } else {
       document.documentElement.setAttribute('data-theme', 'dark');
-      icon.className = 'fas fa-sun';
+      if (icon) icon.className = 'fas fa-sun';
       showToast('Modo Oscuro Activado');
     }
   });
@@ -28,7 +30,7 @@ function initThemeToggle() {
 
 // 2. FILTRADO INTERACTIVO DE HABILIDADES
 function initSkillsFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const filterBtns = document.querySelectorAll('.pill-btn, .filter-btn');
   const skillChips = document.querySelectorAll('.skill-chip');
 
   filterBtns.forEach(btn => {
@@ -49,11 +51,11 @@ function initSkillsFilter() {
   });
 }
 
-// 3. COPIAR AL PORTAPAPELES CON TOAST
+// 3. COPIAR AL PORTAPAPELES CON CONFIRMACIÓN TOAST
 function copiarAlPortapapeles(texto, label) {
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(texto).then(() => {
-      showToast(`${label} copiado: ${texto}`);
+      showToast(`${label} copiado`);
     }).catch(() => {
       fallbackCopy(texto, label);
     });
@@ -63,7 +65,7 @@ function copiarAlPortapapeles(texto, label) {
 
   // Notificar al wrapper nativo de Flutter si está disponible
   if (window.FlutterChannel) {
-    window.FlutterChannel.postMessage(`Copiado: ${label} - ${texto}`);
+    window.FlutterChannel.postMessage(`Copiado: ${label} (${texto})`);
   }
 }
 
@@ -74,15 +76,19 @@ function fallbackCopy(texto, label) {
   input.select();
   document.execCommand('copy');
   document.body.removeChild(input);
-  showToast(`${label} copiado: ${texto}`);
+  showToast(`${label} copiado`);
 }
 
 // 4. MOSTRAR MENSAJE TOAST FLOTANTE
+let toastTimeout;
 function showToast(mensaje) {
   const toast = document.getElementById('toast');
+  if (!toast) return;
   toast.textContent = mensaje;
   toast.classList.add('show');
-  setTimeout(() => {
+  
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => {
     toast.classList.remove('show');
   }, 2200);
 }
@@ -94,16 +100,11 @@ function handleFormSubmit(event) {
   const email = document.getElementById('senderEmail').value;
   const msg = document.getElementById('senderMsg').value;
 
-  showToast(`¡Gracias ${name}! Mensaje preparado correctamente.`);
+  showToast(`¡Gracias ${name}! Mensaje enviado.`);
   
-  // Si estamos en Flutter WebView, notificamos a Flutter
+  // Si estamos en Flutter WebView, notificamos al snackbar nativo
   if (window.FlutterChannel) {
-    window.FlutterChannel.postMessage(JSON.stringify({
-      action: 'contact',
-      name: name,
-      email: email,
-      message: msg
-    }));
+    window.FlutterChannel.postMessage(`Mensaje de ${name} (${email}): ${msg}`);
   }
 
   document.getElementById('contactForm').reset();
